@@ -1,0 +1,133 @@
+#include <iostream>
+#define laenge 18
+class Queue
+{
+public:
+
+
+
+    void setupQueue();
+    void coutall();
+    void push(int);
+    void pv2(int);
+    int pop();
+    void reset();
+
+private:
+    int counter;
+    int pointer=0;
+    int lastElement=10;
+    int firstElement= 3;
+    int maxQL= laenge;
+    int TheQueue[laenge]={0};
+};
+void Queue::setupQueue()
+{
+
+
+    //TheQueue[100]= {10};
+    for(int e;e<laenge;e++)
+    {
+        //std::cout<< "grfd"<<std::endl;
+        //TheQueue[e]= 0;
+    }
+
+};
+void Queue::reset() {
+    for(int e=0;e<laenge;e++)
+    {
+        //TheQueue[e]= {999};
+    }
+};
+void Queue::coutall() {
+
+
+    for(int i=0;i<laenge;i++)
+        {
+        std::cout<<"the I"<<i;
+        std::cout<<TheQueue[i]<<std::endl;
+
+
+        };
+
+};
+void Queue::push(int newItem) {
+    if(lastElement<laenge-1)
+    {
+        TheQueue[(lastElement+1)] = newItem;
+
+        lastElement ++;
+
+    }
+    else
+    {
+       std::cout<<"Ups,zu viel"<< newItem<<std::endl;
+    }
+
+}void Queue::pv2(int newItem2) {
+    if(newItem2 == 6){
+        std::cout<<"not passed first";
+        std::cout<<"l "<<lastElement;
+        std::cout<<"f "<<firstElement<< std::endl;
+        std::cout<<"con "<< (!(firstElement==0 && lastElement ==laenge))<< std::endl;
+    }
+
+    if( !(firstElement-lastElement ==1 ) )
+    {
+        if( firstElement  ==0 && lastElement ==laenge )
+        {
+            std::cout<<"l "<<lastElement;
+            std::cout<<"l "<<firstElement<< std::endl;
+            std::cout<<"Ups,zu vielo"<< newItem2<<std::endl;
+        }
+        else{
+            if(newItem2 == 4){
+                std::cout<<"iddios";
+                std::cout<<"l "<<lastElement;
+                std::cout<<"f "<<firstElement<< std::endl;
+            }
+            TheQueue[((lastElement != laenge)*(lastElement+1))]=newItem2;
+            if(lastElement == laenge-1){
+                lastElement =0;
+                TheQueue[0]=newItem2;
+
+            }
+            else {
+                lastElement = !(lastElement == laenge) * (lastElement + 1);
+
+            }
+        }
+    }
+    else{
+
+
+        std::cout<<"Ups,zu viel"<< newItem2<<std::endl;
+    }
+
+
+}
+int Queue::pop()
+{
+
+}
+int main() {
+
+    Queue que;
+    //que.setupQueue();
+    //que.coutall();
+    que.reset();
+    for(int f=0;f<laenge+10;f++){
+        que.pv2(f);
+        if(f== laenge){
+            que.coutall();
+            std::cout<<"              "<<std::endl;
+        }
+    }
+    que.coutall();
+
+
+
+    //que.coutall();
+
+}
+
